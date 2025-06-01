@@ -61,6 +61,17 @@ ol {
   width: 1140px;
 }
 
+.button {
+  border-width: 1px;
+  border-color: #fff;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #1b1919;
+  cursor: pointer;
+}
+
 /* Блок с видео */
 
 .result {
@@ -69,13 +80,26 @@ ol {
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .search-form__label {
   display: flex;
   width: fit-content;
   padding-top: 5px;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* Блок поиска городов */
@@ -94,12 +118,14 @@ input {
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
   padding: 2.5px 14px 2.5px 0;
+  color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
 
 .search-form__fieldset-title {
+  font-weight: 400;
   font-size: 18px;
 }
 
@@ -109,6 +135,35 @@ input {
 }
 
 /* Блок ЧекБоксов ВРЕМЯ СУТОК */
+
+.search-form__pseudo-checkbox {
+  width: 21px;
+  height: 21px;
+  margin-right: 5px;
+  border: 1px solid #ffffff;
+  padding: 1px 1px 1px 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  vertical-align: baseline;
+  background-color: #ffffff;
+  transform: scale(0);
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  transform: scale(1);
+}
+
+.search-form__submit-button {
+  width: 194px;
+  padding: 6px 70px;
+  margin-top: 22px;
+}
 
 /* Блок кнопки НАЙТИ */
 
@@ -122,6 +177,7 @@ video {
   width: 711px;
   height: 386px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 /* Блок скроллбара */
@@ -143,6 +199,7 @@ video {
 }
 
 .content__list-container {
+  width: 390px;
   height: 298px;
   overflow: hidden scroll;
 }
@@ -151,6 +208,10 @@ video {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.content__list-item {
+  display: inline-block;
 }
 
 .content__card-link {
@@ -162,6 +223,8 @@ video {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .content__video-card-description-container {
@@ -172,6 +235,7 @@ video {
 .content__video-card-title {
   display: -webkit-box;
   overflow: hidden;
+  font-family: "Oswald", "Fira Sans Condensed", sans-serif;
   text-transform: uppercase;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -185,18 +249,82 @@ video {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  width: 197px;
   height: 103px;
   object-fit: cover;
   object-position: center;
 }
 
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  inline-size: 1px;
-  block-size: 1px;
-  clip-path: inset(50%);
-  white-space: nowrap;
+.more-button {
+  width: 382px;
+  padding: 6px 100px;
+  margin-top: 30px;
+}
+
+/* Стили состояний */
+
+.search-form__textfield:active {
+  outline: 1px;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: 2px solid #ffffff;
+}
+
+.button:focus-visible {
+  outline: 2px solid #ffffff;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:focus {
+  outline: 2px solid #ffffff;
+}
+
+.search-form__label:focus-visible {
+  outline: 2px solid #ffffff;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid #ffffff;
+}
+
+/* Фон для скрипта активной карточки */
+.content__card-link_current {
+  background-color: #1b1919;
+}
+
+/* Позиционирование прелоадеров */
+.result__video-container {
+  position: relative;
+}
+
+.content__list-container {
+  position: relative;
 }
