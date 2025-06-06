@@ -63,6 +63,7 @@ ol {
 
 .button {
   border-width: 1px;
+  border-style: solid;
   border-color: #fff;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -241,11 +242,11 @@ video {
   display: -webkit-box;
   display: flex;
   align-items: center;
-  height: 30px;
   margin-bottom: 1px;
   overflow: hidden;
   font-family: "Oswald", "Fira Sans Condensed", sans-serif;
   font-size: 30px;
+  line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
@@ -256,6 +257,7 @@ video {
 .content__video-card-description {
   display: -webkit-box;
   overflow: hidden;
+  line-height: 20px;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -334,5 +336,5 @@ video {
 
 /* Фон для скрипта активной карточки */
 .content__card-link_current {
-  background-color: #1b1919;
+  background-color: #545050;
 }
